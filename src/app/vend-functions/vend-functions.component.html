@@ -1,0 +1,49 @@
+<!-- Vending machine content -->
+<div class ="container" *ngIf="this.showItems">
+    <div class ="card" *ngFor="let item of items">
+      <h1>{{item.name}}</h1>
+      <p>Cost: ${{item.price}}</p>
+      <p>Quantity: {{item.quantity}}</p>
+      <button type="button" (click)="buyItem(item)">Buy</button>
+    </div>
+</div>
+
+<div class="container2">
+    <p>Balance: ${{bal}}</p>
+    <button id="myBtn" (click)="active()">Add Funds</button>
+    <button type="button" (click)="change()">Return Change</button>
+    <button type="button" (click)="show()">Select Items</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal" *ngIf="this.modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" (click)="active()">&times;</span>
+    <form [formGroup]="userForm" >
+      <div>
+        <label> Amount to add</label>
+        <input type="number" class="form-control" placeholder="2.50" formControlName="funds" required>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!userForm.valid" (click)="add(); active();">Submit</button>
+
+    </form>
+    
+
+  </div>
+</div>
+
+
+</div>
+
+<h1>Transaction List:</h1>
+
+<div>
+
+  <div class ="card" *ngFor="let item of list">
+    <p>Name: {{item.name}}</p>
+    <p>Cost: ${{item.price}}</p>
+    <p>Amount Sold: {{item.quantity}}</p>
+  </div>
+  <h1>Total Revanue: ${{rev}}</h1>
+</div>
