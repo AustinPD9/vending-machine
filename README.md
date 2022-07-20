@@ -26,3 +26,8 @@ you are putting in (eg: “1.50”)
 Keep track of all the balances, change, ect.. And handle any errors that might be thrown (Not enough money for item, item out of inventory, ect.. With a simple popup errors describing the issue.
 
 “Saving” this data can simply be done by holding it in memory of your running program, no need to actually commit it to any database. Items can be hard coded in your code.
+
+## Directory to the solution/my code
+-src
+  -app
+    -vend-functions
